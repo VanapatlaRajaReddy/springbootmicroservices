@@ -1,0 +1,19 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: CLOUD-API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id: WELCOME-API
+        uri: lb://WELCOME-API
+        predicates:
+        - Path=/welcome
+      - id: GREET-API
+        uri: lb://GREET-API
+        predicates:
+        - Path=/greet
+       
+      
+
